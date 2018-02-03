@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,7 +16,7 @@ public class DialogueSystemManager : MonoBehaviour {
 
 	void Awake() {
 		continueButton = dialoguePanel.transform.Find ("Continue").GetComponent<Button> ();
-		dialogueText = dialoguePanel.transform.FindChild ("Text").GetComponent<Text> ();
+		dialogueText = dialoguePanel.transform.Find("Text").GetComponent<Text> ();
 		nameText = dialoguePanel.transform.Find ("Name").GetChild (0).GetComponent < Text> ();
 		continueButton.onClick.AddListener (delegate { ContinueDialogue(); } );
 		dialoguePanel.SetActive (false);
@@ -38,7 +38,6 @@ public class DialogueSystemManager : MonoBehaviour {
 
 		this.npcName = npcName;
 
-		Debug.Log (dialogueLines.Count);
 		CreateDialogue ();
 	}
 
